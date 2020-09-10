@@ -20,7 +20,6 @@ class ShowListActivity : AppCompatActivity(), ItemsClick {
     lateinit var viewDialog: View
     lateinit var viewEditDialog: View
     lateinit var alertDialog: AlertDialog
-    lateinit var alerEdittDialog: AlertDialog
     private val dataList = ArrayList<ShowListModel>()
     var getPosition: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,21 +82,22 @@ class ShowListActivity : AppCompatActivity(), ItemsClick {
 
     }
 
-    private fun createEditDialog(model: ShowListModel, position: Int) {
+    private fun createEditDialog(model: ShowListModel?, position: Int?) {
         val builder = AlertDialog.Builder(this)
         builder.setView(viewEditDialog)
         builder.setTitle("EDIT STUDENT")
+        val alert = builder.show()
         val btnCancle = viewEditDialog.findViewById<Button>(R.id.btn_Dialog_Edit_Cancel)
         val btnUpdate = viewEditDialog.findViewById<Button>(R.id.btn_Dialog_Update)
         var editFullName = viewEditDialog.findViewById<EditText>(R.id.edt_Dialog_Edit_Name)
         var editSubject = viewEditDialog.findViewById<EditText>(R.id.edt_Dialog_Edit_Subject)
         var editScore = viewEditDialog.findViewById<EditText>(R.id.edt_Dialog_Edit_Score)
-        editFullName.setText(model.tvShowName)
-        editSubject.setText(model.tvSubject)
-        editScore.setText(model.tvScore)
+        editFullName.setText(model?.tvShowName)
+        editSubject.setText(model?.tvSubject)
+        editScore.setText(model?.tvScore)
 
 
-        btnCancle.setOnClickListener { builder.setCancelable(true) }
+        btnCancle.setOnClickListener { alert.dismiss() }
         btnUpdate.setOnClickListener {
 
             when {
@@ -115,16 +115,15 @@ class ShowListActivity : AppCompatActivity(), ItemsClick {
                     modeUpdate.tvShowName = editFullName.text.toString()
                     modeUpdate.tvSubject = editSubject.text.toString()
                     modeUpdate.tvScore = editScore.text.toString()
-                    dataList[position] = modeUpdate
+                    dataList[position!!] = modeUpdate
                     setRecycleView()
-                    builder.setCancelable(true)
+                    alert.dismiss()
                     editFullName.text = null
                     editSubject.text = null
                     editScore.text = null
                 }
             }
         }
-        builder.create().show()
     }
 
     override fun onItemsClick(position: Int) {
