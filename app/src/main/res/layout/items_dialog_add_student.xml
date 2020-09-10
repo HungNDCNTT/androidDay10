@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="32dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="32dp"
+    android:paddingBottom="16dp">
+
+    <EditText
+        android:id="@+id/edt_Dialog_Add_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textCapWords"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_Dialog_Add_Subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Subject"
+        android:inputType="textCapWords"
+        app:layout_constraintEnd_toEndOf="@+id/edt_Dialog_Add_Name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edt_Dialog_Add_Name"
+        app:layout_constraintTop_toBottomOf="@+id/edt_Dialog_Add_Name" />
+
+    <EditText
+        android:id="@+id/edt_Dialog_Add_Score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Score"
+        android:inputType="textCapWords"
+        app:layout_constraintEnd_toEndOf="@+id/edt_Dialog_Add_Subject"
+        app:layout_constraintStart_toStartOf="@+id/edt_Dialog_Add_Subject"
+        app:layout_constraintTop_toBottomOf="@+id/edt_Dialog_Add_Subject" />
+
+    <Button
+        android:id="@+id/btn_Dialog_Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="ADD"
+        app:layout_constraintEnd_toStartOf="@+id/btn_Dialog_Cancle"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_Dialog_Add_Score" />
+
+    <Button
+        android:id="@+id/btn_Dialog_Cancle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_Dialog_Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_Dialog_Add"
+        app:layout_constraintTop_toTopOf="@+id/btn_Dialog_Add" />
+</androidx.constraintlayout.widget.ConstraintLayout>
