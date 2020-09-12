@@ -126,15 +126,15 @@ class ShowListActivity : AppCompatActivity(), ItemsClick {
         }
     }
 
-    override fun onItemsClick(position: Int) {
-        Toast.makeText(this, " Click", Toast.LENGTH_SHORT).show()
-        val model = dataList[position]
-        createEditDialog(model, position)
-    }
+override fun onItemsClick(position: Int) {
+    Toast.makeText(this, " Click", Toast.LENGTH_SHORT).show()
+    val model = dataList[position]
+    createEditDialog(model, position)
+}
 
-    override fun onLongClickItems(position: Int) {
-        Toast.makeText(this, "Long Click", Toast.LENGTH_SHORT).show()
-        dataList.removeAt(position)
-        setRecycleView()
-    }
+override fun onLongClickItems(position: Int) {
+    Toast.makeText(this, "Long Click", Toast.LENGTH_SHORT).show()
+    dataList.removeAt(position)
+    setRecycleView()
+}
 }
