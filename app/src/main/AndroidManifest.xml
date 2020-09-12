@@ -10,12 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".readingstory.ReadingStoryActivity"
+            android:name="com.hungnd.androidday10.readingbook.readingstory.ReadingStoryActivity"
             android:label="@string/title_activity_reading_story"
             android:theme="@style/MyTheme">
 
         </activity>
-        <activity android:name=".student.activity.ShowListActivity" />
+        <activity android:name="com.hungnd.androidday10.student.activity.ShowListActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
